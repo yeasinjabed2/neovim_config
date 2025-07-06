@@ -10,6 +10,16 @@ local options = {
         "vim",
         "vimdoc",
         "yaml",
+        "tsx",
+        "vue",
+        "javascript",
+        "typescript",
+        "json",
+        "html",
+        "css",
+        "python",
+        "rust",
+        "dart",
     },
 
     highlight = {
