@@ -1,4 +1,4 @@
-vi.osessionoptions = vim.o.sessionoptions .. ",localoptions"
+vim.o.sessionoptions = vim.o.sessionoptions .. ",localoptions" 
 
 return {
     {

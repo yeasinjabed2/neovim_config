@@ -1,6 +1,4 @@
-require("nvchad.options")
-
--- add yours here!
+ require("nvchad.options") 
 
 local o = vim.o
 
@@ -13,5 +11,6 @@ o.relativenumber = true
 o.number = true
 
 o.mouse = ""
+
 
 -- - o.cursorlineopt ='both' -- to enable cursorline!
