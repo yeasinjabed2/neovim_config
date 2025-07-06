@@ -1,4 +1,4 @@
-vim.o.sessionoptions = vim.o.sessionoptions .. ",localoptions" 
+vim.o.sessionoptions = vim.o.sessionoptions .. ",localoptions"
 
 return {
     {
@@ -30,6 +30,10 @@ return {
             require("copilot").setup({
                 suggestion = { enabled = true, auto_trigger = true },
                 panel = { enabled = true },
+                filetypes = {
+                    ["*"] = true, -- enable in all filetypes
+                    gitcommit = true, -- make sure it's explicitly enabled here
+                },
             })
         end,
     },
