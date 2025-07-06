@@ -68,3 +68,5 @@ end, { desc = "Harpoon File 5" })
 map("n", "<leader>ss", ":SessionSave<CR>", { desc = "Save Session" })
 map("n", "<leader>sl", ":SessionLoad<CR>", { desc = "Load Session" })
 map("n", "<leader>sd", ":SessionDelete<CR>", { desc = "Delete Session" })
+
+-- new commit
