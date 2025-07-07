@@ -73,21 +73,6 @@ return {
             require("configs.cmp")
         end,
     },
-
-    {
-        "rmagatti/auto-session",
-        config = function()
-            require("auto-session").setup({
-                log_level = "error",
-                auto_session_enable_last_session = true,
-                auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
-                auto_session_enabled = true,
-                auto_save_enabled = true,
-                auto_restore_enabled = true,
-            })
-        end,
-    },
-
     {
         "rmagatti/auto-session",
         lazy = false,
@@ -100,6 +85,13 @@ return {
                 auto_session_use_git_branch = true,
                 session_lens = { load_on_setup = false },
             })
+        end,
+    },
+
+    {
+        "mbbill/undotree",
+        config = function()
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
         end,
     },
 }

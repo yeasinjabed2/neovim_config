@@ -69,4 +69,7 @@ map("n", "<leader>ss", ":SessionSave<CR>", { desc = "Save Session" })
 map("n", "<leader>sl", ":SessionLoad<CR>", { desc = "Load Session" })
 map("n", "<leader>sd", ":SessionDelete<CR>", { desc = "Delete Session" })
 
+-- Undotree toggle
+map("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Undotree" })
+
 -- new commit

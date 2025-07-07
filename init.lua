@@ -36,6 +36,8 @@ vim.schedule(function()
     require("mappings")
 end)
 
+-- Git commit diff injection
+-- In cmd > git config --global core.editor "nvim"
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "gitcommit",
     callback = function()
@@ -69,3 +71,14 @@ vim.api.nvim_create_autocmd("FileType", {
         end)
     end,
 })
+
+-- Clear ConformInfo log
+vim.api.nvim_create_user_command("ClearConformInfo", function()
+    local conform_log_path = vim.fn.stdpath("cache") .. "/conform.log"
+    if vim.fn.filereadable(conform_log_path) == 1 then
+        vim.fn.writefile({}, conform_log_path)
+        print("ConformInfo log cleared.")
+    else
+        print("ConformInfo log file does not exist.")
+    end
+end, { desc = "Clear ConformInfo log" })
