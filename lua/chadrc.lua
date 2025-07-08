@@ -19,7 +19,7 @@ M.lsp = {
     },
 
     config = {
-        tsserver = require({ "configs.tsserver" }),
+        tsserver = require("configs.tsserver"),
     },
 }
 
