@@ -3,10 +3,10 @@ local options = {
         lua = { "stylua" },
         css = { "prettier" },
         html = { "prettier" },
-        javascript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
+        javascript = { "eslint_d", "prettier" },
+        javascriptreact = { "eslint_d", "prettier" },
+        typescript = { "eslint_d", "prettier" },
+        typescriptreact = { "eslint_d", "prettier" },
         json = { "prettier" },
         markdown = { "prettier" },
         yaml = { "prettier" },
@@ -17,7 +17,7 @@ local options = {
 
     format_on_save = {
         -- These options will be passed to conform.format()
-        timeout_ms = 500,
+        timeout_ms = 1000,
         lsp_fallback = true,
     },
 }
