@@ -20,9 +20,9 @@ return {
             desc = "Copilot Chat: Fix selected code",
         },
         {
-            "<leader>cq",
+            "<leader>ca",
             function()
-                require("CopilotChat").ask()
+                require("CopilotChat").open()
             end,
             mode = "v",
             desc = "Copilot Chat: Ask Copilot (selected code)",
