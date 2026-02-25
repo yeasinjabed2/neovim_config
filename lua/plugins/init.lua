@@ -73,25 +73,47 @@ return {
             require("configs.cmp")
         end,
     },
-    {
-        "rmagatti/auto-session",
-        lazy = false,
-        config = function()
-            require("auto-session").setup({
-                log_level = "info",
-                auto_session_enabled = true,
-                auto_save_enabled = true,
-                auto_restore_enabled = true,
-                auto_session_use_git_branch = true,
-                session_lens = { load_on_setup = false },
-            })
-        end,
-    },
+    -- {
+    --     "rmagatti/auto-session",
+    --     lazy = false,
+    --     config = function()
+    --         require("auto-session").setup({
+    --             log_level = "info",
+    --             auto_session_enabled = true,
+    --             auto_save_enabled = true,
+    --             auto_restore_enabled = true,
+    --             auto_session_use_git_branch = true,
+    --             session_lens = { load_on_setup = false },
+    --         })
+    --     end,
+    -- },
 
     {
         "mbbill/undotree",
         config = function()
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+        end,
+    },
+
+    -- flutter tools
+    {
+        "akinsho/flutter-tools.nvim",
+        ft = { "dart" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "stevearc/dressing.nvim", -- optional for vim.ui.select
+        },
+        config = function()
+            require("flutter-tools").setup({
+                debugger = {
+                    enabled = true,
+                },
+                lsp = {
+                    color = {
+                        enabled = true,
+                    },
+                },
+            })
         end,
     },
 }

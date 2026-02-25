@@ -71,3 +71,47 @@ map("n", "<leader>sd", ":SessionDelete<CR>", { desc = "Delete Session" })
 
 -- Undotree toggle
 map("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Undotree" })
+
+-- Disable mouse scroll
+for _, key in ipairs({
+    "<ScrollWheelUp>",
+    "<ScrollWheelDown>",
+    "<S-ScrollWheelUp>",
+    "<S-ScrollWheelDown>",
+    "<C-ScrollWheelUp>",
+    "<C-ScrollWheelDown>",
+    "<A-ScrollWheelUp>",
+    "<A-ScrollWheelDown>",
+    "<ScrollWheelLeft>",
+    "<ScrollWheelRight>",
+}) do
+    map("", key, "<Nop>", { silent = true })
+end
+
+-- Disable left/right mouse clicks
+map("", "<LeftMouse>", "<Nop>", { silent = true })
+map("", "<RightMouse>", "<Nop>", { silent = true })
+map("", "<2-LeftMouse>", "<Nop>", { silent = true }) -- double-click
+map("", "<3-LeftMouse>", "<Nop>", { silent = true }) -- triple-click
+map("", "<MiddleMouse>", "<Nop>", { silent = true })
+map("", "<ScrollWheelUp>", "<Nop>", { silent = true })
+map("", "<ScrollWheelDown>", "<Nop>", { silent = true })
+
+---------------------------
+-- Flutter mappings
+---------------------------
+map("n", "<leader>fr", "<cmd>FlutterRun<CR>", { desc = "Flutter Run" })
+map("n", "<leader>fq", "<cmd>FlutterQuit<CR>", { desc = "Flutter Quit" })
+
+-- Hot reload / restart
+map("n", "<leader>fh", "<cmd>FlutterReload<CR>", { desc = "Flutter Hot Reload" })
+map("n", "<leader>fR", "<cmd>FlutterRestart<CR>", { desc = "Flutter Hot Restart" })
+
+-- DevTools
+map("n", "<leader>fd", "<cmd>FlutterDevTools<CR>", { desc = "Flutter DevTools" })
+
+-- Select device
+map("n", "<leader>fs", "<cmd>FlutterDevices<CR>", { desc = "Flutter Select Device" })
+
+-- Open outline (widgets tree)
+map("n", "<leader>fo", "<cmd>FlutterOutlineToggle<CR>", { desc = "Flutter Outline" })

@@ -10,7 +10,7 @@ o.softtabstop = 2 -- number of spaces to use for each step of (auto)indent
 o.relativenumber = true -- enable relative line numbers
 o.number = true -- enable line numbers
 
-o.mouse = "" -- disable mouse support
+-- o.mouse = "" -- disable mouse support
 o.scrolloff = 0 -- disable scrolloff
 o.undolevels = 1000 -- number of undolevels to keep
 

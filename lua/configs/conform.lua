@@ -13,6 +13,7 @@ local options = {
         python = { "black" },
         go = { "gofumpt" },
         rust = { "rustfmt" },
+        dart = { "dart_format" },
     },
 
     format_on_save = {
