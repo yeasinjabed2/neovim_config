@@ -95,6 +95,28 @@ return {
         end,
     },
 
+    -- image viewer
+    -- {
+    --     "samodostal/image.nvim",
+    --     ft = { "png", "jpg", "jpeg", "bmp", "gif" },
+    --     config = function()
+    --         require("image").setup({
+    --             render = {
+    --                 min_padding = 5,
+    --             },
+    --         })
+    --     end,
+    -- },
+
+    -- aplha dashboard
+    {
+        "goolord/alpha-nvim",
+        event = "VimEnter",
+        config = function()
+            require("configs.alpha")()
+        end,
+    },
+
     -- flutter tools
     {
         "akinsho/flutter-tools.nvim",
