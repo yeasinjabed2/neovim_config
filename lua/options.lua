@@ -13,6 +13,7 @@ o.number = true -- enable line numbers
 -- o.mouse = "" -- disable mouse support
 o.scrolloff = 0 -- disable scrolloff
 o.undolevels = 1000 -- number of undolevels to keep
+o.sessionoptions = "buffers,curdir,tabpages,winsize" -- session options
 
 -- give all usefull options for better productivity
 -- o.clipboard = "unnamedplus" -- use system clipboard

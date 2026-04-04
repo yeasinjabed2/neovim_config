@@ -14,6 +14,7 @@ local options = {
         go = { "gofumpt" },
         rust = { "rustfmt" },
         dart = { "dart_format" },
+        vue = { "prettier" },
     },
 
     format_on_save = {
