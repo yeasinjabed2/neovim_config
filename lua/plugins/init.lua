@@ -138,4 +138,6 @@ return {
             })
         end,
     },
+    -- avante
+    require("configs.avante"),
 }
