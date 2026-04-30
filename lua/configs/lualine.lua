@@ -17,19 +17,8 @@ local function lsp_clients()
   return table.concat(names, ",")
 end
 
-lualine.setup({
-  options = {
-    icons_enabled = true,
-    theme = "auto",
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
-    disabled_filetypes = { statusline = { "alpha", "NvimTree", "lazy", "dashboard" } },
-    globalstatus = true,
-    always_divide_middle = true,
-  },
-  sections = {
-    lualine_a = { { "mode", icon = "", color = function()
-        local mode_color = {
+local function mode_color()
+        local color = {
           n = { fg = "#ffffff", bg = "#61317d" },  -- Normal: white text, dodger blue bg
           i = { fg = "#ffffff", bg = "#359c5c" },  -- Insert: white text, green bg
           v = { fg = "#ffffff", bg = "#ab2b91" },  -- Visual: white text, pink bg
@@ -43,8 +32,21 @@ lualine.setup({
           ["!"] = { fg = "#ffffff", bg = "#8be9fd" },  -- Shell: white text, cyan bg
           t = { fg = "#ffffff", bg = "#f75414" },  -- Terminal: white text, cyan bg
         }
-        return mode_color[vim.fn.mode()] or {}
-    end } },
+        return color[vim.fn.mode()] or {}
+end
+
+lualine.setup({
+  options = {
+    icons_enabled = true,
+    theme = "auto",
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    disabled_filetypes = { statusline = { "alpha", "NvimTree", "lazy", "dashboard" } },
+    globalstatus = true,
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = { { "mode", icon = "", color = mode_color } },
     lualine_b = { { "branch", icon = "" }, "diff" },
     lualine_c = {
       { "filename", path = 1, symbols = { modified = " ●", readonly = " ", unnamed = "[No Name]" } },
