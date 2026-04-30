@@ -107,13 +107,7 @@ local plugins = {
     },
 
     -- Linters
-    {
-        "mfussenegger/nvim-lint",
-        event = { "BufReadPost", "BufNewFile" },
-        config = function()
-            require("plugins.linters")
-        end,
-    },
+    { import = "plugins.linters" },
 
     -- Auto-tag
     {
