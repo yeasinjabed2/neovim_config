@@ -1,50 +1,34 @@
-local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
-local opts = { noremap = true, silent = true }
+local autocmd = vim.api.nvim_create_autocmd
 
--- Auto-session group
-local auto_session_group = augroup("AutoSession", { clear = true })
-
-autocmd("VimLeave", {
-    group = auto_session_group,
-    callback = function()
-        pcall(function()
-            require("auto-session").SaveSession()
-        end)
-    end,
-})
-
-autocmd("VimEnter", {
-    group = auto_session_group,
-    callback = function()
-        if vim.fn.argc() == 0 and not vim.g.started_with_args then
-            vim.schedule(function()
-                pcall(function()
-                    require("auto-session").RestoreSession()
-                end)
-            end)
-        end
-    end,
-    once = true,
-})
-
--- Highlight group
-local highlight_group = augroup("Highlight", { clear = true })
-
+-- Highlight on yank
+augroup("YankHighlight", { clear = true })
 autocmd("TextYankPost", {
-    group = highlight_group,
+    group = "YankHighlight",
     callback = function()
         vim.highlight.on_yank({ timeout = 200 })
     end,
 })
 
--- Formatting group
-local format_group = augroup("Format", { clear = true })
-
+-- Auto-format on save
+augroup("AutoFormat", { clear = true })
 autocmd("BufWritePre", {
-    group = format_group,
+    group = "AutoFormat",
     callback = function()
-        require("conform").format({ async = false, lsp_fallback = true })
+        vim.lsp.buf.format({ async = false })
+    end,
+})
+
+-- Create missing parent directories
+augroup("AutoCreateDir", { clear = true })
+autocmd("BufWritePre", {
+    group = "AutoCreateDir",
+    callback = function(event)
+        if event.match:match("^%w%w+://") then
+            return
+        end
+        local file = vim.loop.fs_realpath(event.match) or event.match
+        vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
     end,
 })
 
