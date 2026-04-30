@@ -51,7 +51,6 @@ local plugins = {
     },
 
     -- Import standalone plugin files
-    { import = "plugins.auto-session" },
     { import = "plugins.autotag" },
     { import = "plugins.copilot-chat" },
     { import = "plugins.lazygit" },

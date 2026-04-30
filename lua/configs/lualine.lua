@@ -19,7 +19,7 @@ end
 
 local function mode_color()
         local color = {
-          n = { fg = "#ffffff", bg = "#61317d" },  -- Normal: white text, dodger blue bg
+          n = { fg = "#ffffff", bg = "#10569c" },  -- Normal: white text, dodger blue bg
           i = { fg = "#ffffff", bg = "#359c5c" },  -- Insert: white text, green bg
           v = { fg = "#ffffff", bg = "#ab2b91" },  -- Visual: white text, pink bg
           V = { fg = "#ffffff", bg = "#ab2b91" },
