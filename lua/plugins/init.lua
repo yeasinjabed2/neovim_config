@@ -56,7 +56,7 @@ local plugins = {
     { import = "plugins.copilot-chat" },
     { import = "plugins.lazygit" },
     { import = "plugins.linters" },
-    { import = "plugins.lualine" },
+    -- { import = "plugins.lualine" },
     -- LSP Setup
     {
         "neovim/nvim-lspconfig",
