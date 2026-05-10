@@ -10,15 +10,6 @@ autocmd("TextYankPost", {
     end,
 })
 
--- Auto-format on save
-augroup("AutoFormat", { clear = true })
-autocmd("BufWritePre", {
-    group = "AutoFormat",
-    callback = function()
-        vim.lsp.buf.format({ async = false })
-    end,
-})
-
 -- Create missing parent directories
 augroup("AutoCreateDir", { clear = true })
 autocmd("BufWritePre", {
@@ -34,15 +25,6 @@ autocmd("BufWritePre", {
 
 -- LSP group
 local lsp_group = augroup("LSP", { clear = true })
-
-autocmd("BufWritePost", {
-    group = lsp_group,
-    callback = function()
-        pcall(function()
-            require("lint").try_lint()
-        end)
-    end,
-})
 
 autocmd("LspAttach", {
     group = lsp_group,

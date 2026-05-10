@@ -106,18 +106,6 @@ local plugins = {
     end,
   },
 
-  -- Linters
-  { import = "plugins.linters" },
-
-  -- Auto-tag
-  {
-    "windwp/nvim-ts-autotag",
-    event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("plugins.autotag")
-    end,
-  },
-
   -- Avante AI
   {
     "yetone/avante.nvim",
@@ -207,7 +195,7 @@ local plugins = {
   },
   {
     "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
+    dependencies = { "zbirenbaum/copilot.lua" },
     config = function()
       require("copilot_cmp").setup()
     end,
