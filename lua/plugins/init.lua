@@ -180,6 +180,16 @@ local plugins = {
   --   },
   -- },
 
+  -- Markdown preivew
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    event = "BufReadPost",
+    ft = { "markdown" },
+    opts = {
+      file_types = { "markdown" },
+    },
+  },
+
   -- Copilot
   {
     "zbirenbaum/copilot.lua",
