@@ -72,7 +72,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     build = ":TSUpdate",
-    tag = "v0.10.0",
+    branch = "main",
     config = function()
       require("configs.treesitter")
     end,
@@ -222,7 +222,6 @@ local plugins = {
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
     event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
