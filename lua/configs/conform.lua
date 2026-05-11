@@ -12,46 +12,46 @@ conform.setup({
     typescriptreact = { "prettier" },
     javascriptreact = { "prettier" },
     json = { "prettier" },
-    jsonc = { "prettier" },
+    -- jsonc = { "prettier" },
     yaml = { "prettier" },
     markdown = { "prettier" },
     html = { "prettier" },
     css = { "prettier" },
-    scss = { "prettier" },
-    less = { "prettier" },
-    graphql = { "prettier" },
+    -- scss = { "prettier" },
+    -- less = { "prettier" },
+    -- graphql = { "prettier" },
     -- Python
     python = { "black", "isort" },
-    -- Rust
-    rust = { "rustfmt" },
-    -- C/C++
-    c = { "clang-format" },
-    cpp = { "clang-format" },
-    -- Go
-    go = { "gofmt" },
-    -- Java
-    java = { "google-java-format" },
-    -- Kotlin
-    kotlin = { "ktlint" },
-    -- C#
-    cs = { "csharpier" },
-    -- PHP
-    php = { "php-cs-fixer" },
-    -- Ruby
-    ruby = { "rubocop" },
-    -- Lua
+    -- -- Rust
+    -- rust = { "rustfmt" },
+    -- -- C/C++
+    -- c = { "clang-format" },
+    -- cpp = { "clang-format" },
+    -- -- Go
+    -- go = { "gofmt" },
+    -- -- Java
+    -- java = { "google-java-format" },
+    -- -- Kotlin
+    -- kotlin = { "ktlint" },
+    -- -- C#
+    -- cs = { "csharpier" },
+    -- -- PHP
+    -- php = { "php-cs-fixer" },
+    -- -- Ruby
+    -- ruby = { "rubocop" },
+    -- -- Lua
     lua = { "stylua" },
-    -- Shell
-    sh = { "shfmt" },
-    bash = { "shfmt" },
-    -- SQL
-    sql = { "sqlfluff" },
-    -- Dockerfile
-    dockerfile = { "hadolint" },
-    -- TOML
-    toml = { "taplo" },
-    -- XML
-    xml = { "xmllint" },
+    -- -- Shell
+    -- sh = { "shfmt" },
+    -- bash = { "shfmt" },
+    -- -- SQL
+    -- sql = { "sqlfluff" },
+    -- -- Dockerfile
+    -- dockerfile = { "hadolint" },
+    -- -- TOML
+    -- toml = { "taplo" },
+    -- -- XML
+    -- xml = { "xmllint" },
     -- flutter
     dart = { "dart_format" },
   },

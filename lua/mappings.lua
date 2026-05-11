@@ -2,7 +2,7 @@ require("nvchad.mappings")
 -- add yours here
 
 local map = vim.keymap.set
-local harpoon = require("harpoon")
+-- local harpoon = require("harpoon")
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
@@ -37,32 +37,32 @@ map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Git Diff This" })
 -- Lazygit
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit UI" })
 
--- Add current file to Harpoon list
-map("n", "<leader>ha", function()
-    harpoon:list():add()
-end, { desc = "Harpoon Add File" })
+-- -- Add current file to Harpoon list
+-- map("n", "<leader>ha", function()
+--     harpoon:list():add()
+-- end, { desc = "Harpoon Add File" })
+--
+-- -- Open Harpoon UI menu
+-- map("n", "<leader>hh", function()
+--     harpoon.ui:toggle_quick_menu(harpoon:list())
+-- end, { desc = "Harpoon Menu" })
 
--- Open Harpoon UI menu
-map("n", "<leader>hh", function()
-    harpoon.ui:toggle_quick_menu(harpoon:list())
-end, { desc = "Harpoon Menu" })
-
--- Quick jump to files 1-5
-map("n", "<leader>h1", function()
-    harpoon:list():select(1)
-end, { desc = "Harpoon File 1" })
-map("n", "<leader>h2", function()
-    harpoon:list():select(2)
-end, { desc = "Harpoon File 2" })
-map("n", "<leader>h3", function()
-    harpoon:list():select(3)
-end, { desc = "Harpoon File 3" })
-map("n", "<leader>h4", function()
-    harpoon:list():select(4)
-end, { desc = "Harpoon File 4" })
-map("n", "<leader>h5", function()
-    harpoon:list():select(5)
-end, { desc = "Harpoon File 5" })
+-- -- Quick jump to files 1-5
+-- map("n", "<leader>h1", function()
+--     harpoon:list():select(1)
+-- end, { desc = "Harpoon File 1" })
+-- map("n", "<leader>h2", function()
+--     harpoon:list():select(2)
+-- end, { desc = "Harpoon File 2" })
+-- map("n", "<leader>h3", function()
+--     harpoon:list():select(3)
+-- end, { desc = "Harpoon File 3" })
+-- map("n", "<leader>h4", function()
+--     harpoon:list():select(4)
+-- end, { desc = "Harpoon File 4" })
+-- map("n", "<leader>h5", function()
+--     harpoon:list():select(5)
+-- end, { desc = "Harpoon File 5" })
 
 -- Auto Session Management
 map("n", "<leader>ss", ":SessionSave<CR>", { desc = "Save Session" })
