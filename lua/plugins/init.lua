@@ -224,6 +224,25 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim" },
+    -- ignore dir to speed up loading --
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = { "node_modules", ".git", "dist", "build" },
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+            },
+          },
+          sorting_strategy = "ascending",
+          mappings = {
+            n = {
+              ["q"] = require("telescope.actions").close,
+            },
+          }
+        },
+      })
+    end,
   },
 
   -- Undotree

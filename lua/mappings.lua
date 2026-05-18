@@ -34,6 +34,7 @@ map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Git Stage Hunk"
 map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Git Undo Stage Hunk" })
 map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Git Diff This" })
 
+
 -- Lazygit
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit UI" })
 
